@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set font
-        run: apt-get install fonts-noto-cjk
+        run: sudo apt-get install fonts-noto-cjk
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Create CN resume tex file
