@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: Set font
         run: |
-          sudo apt-get install fonts-noto-cjk
-          fc-list :lang=zh
+          sudo mkdir /usr/share/fonts/opentype
+          sudo git clone https://github.com/adobe-fonts/source-han-serif.git /usr/share/fonts/opentype/shs
+          sudo fc-cache -f -v
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Create CN resume tex file
