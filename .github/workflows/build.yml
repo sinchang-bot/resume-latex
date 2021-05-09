@@ -8,7 +8,7 @@ jobs:
         run: |
           git clone --depth 1 --branch release https://github.com/adobe-fonts/source-han-serif.git adobe-fonts
           [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
-          sudo cp -rvf adobe-fonts/SubsetOTF/CN/* /usr/share/fonts/opentype/
+          sudo cp -rvf adobe-fonts/OTF/SimplifiedChinese/* /usr/share/fonts/opentype/
           sudo fc-cache -f -v
       - name: Set up Git repository
         uses: actions/checkout@v2
