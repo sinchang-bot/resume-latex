@@ -4,10 +4,10 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Create CN resume tex file
-        run: cat resume.tex | sed 's/zh}\[1\]{}/zh}\[1\]{#1}/g' | sed 's/en}\[1\]{#1}/en}\[1\]{}/g' > resume-zh.tex
       - name: Set up Git repository
         uses: actions/checkout@v2
+      - name: Create CN resume tex file
+        run: cat resume.tex | sed 's/zh}\[1\]{}/zh}\[1\]{#1}/g' | sed 's/en}\[1\]{#1}/en}\[1\]{}/g' > resume-zh.tex
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
