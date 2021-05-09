@@ -6,13 +6,10 @@ jobs:
     steps:
       - name: Set font
         run: |
-          git clone --depth 1  https://github.com/dolbydu/font.git adobe-fonts
-          sudo mkdir -p   /usr/share/fonts/adobe
-          sudo cp -rvf adobe-fonts/* /usr/share/fonts/adobe/
-          sudo mkfontscale
-          sudo mkfontdir
+          git clone --depth 1 https://github.com/adobe-fonts/source-han-serif.git adobe-fonts
+          [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
+          sudo cp -rvf adobe-fonts/SubsetOTF/CN/* /usr/share/fonts/adobe/
           sudo fc-cache -f -v
-          fc-list :lang=zh-cn
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Create CN resume tex file
