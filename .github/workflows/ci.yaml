@@ -4,14 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set font
-        run: |
-          git clone --depth 1 --branch release https://github.com/adobe-fonts/source-han-serif.git adobe-fonts
-          [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
-          sudo cp -rvf adobe-fonts/OTF/SimplifiedChinese/* /usr/share/fonts/opentype/
-          sudo fc-cache -f -v
-      - name: Check all fonts
-        run: sudo fc-list :lang=zh
       - uses: xu-cheng/texlive-action/full@v1
         with:
           run: |
