@@ -10,8 +10,8 @@ jobs:
       #     [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
       #     sudo cp -rvf adobe-fonts/OTF/SimplifiedChinese/* /usr/share/fonts/opentype/
       #     sudo fc-cache -f -v
-      # - name: Check all fonts
-      #   run: sudo fc-list :lang=zh
+      - name: Check all fonts
+        run: sudo fc-list :lang=zh
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Create CN resume tex file
