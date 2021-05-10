@@ -4,7 +4,12 @@
 \newcommand{\zh}[1]{}
 
 \zh{\usepackage{xeCJK}}
-\zh{\setCJKmainfont{Source Han Serif SC}}
+\zh{\setCJKmainfont{{Source Han Serif SC}[
+  UprightFont     = * SemiBold,
+  BoldFont        = * Heavy,
+  ItalicFont      = * SemiBold,
+  BoldItalicFont  = * SemiBold,
+  RawFeature      = +fwid]}
 \zh{\setCJKsansfont{Source Han Sans SC}}
 \zh{\setCJKmonofont{Source Han Sans SC}}
 
